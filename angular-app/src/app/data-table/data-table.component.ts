@@ -8,6 +8,9 @@ import { MatSelectModule } from '@angular/material/select';
 import { Contato } from '../models/Contato.model';
 import { ApiService } from '../services/api.service';
 import { MatIconModule } from '@angular/material/icon';
+import { MatDialog } from '@angular/material/dialog';
+import { UpdateModelComponent } from '../update-model/update-model.component';
+
 
 @Component({
   selector: 'app-data-table',
@@ -18,9 +21,9 @@ import { MatIconModule } from '@angular/material/icon';
 })
 export class DataTableComponent {
 
-  displayedColumns: string[] = [
+  displayedColumns: string[] = ['contato_id', 
     'contato_nome', 'contato_email', 'contato_celular', 
-    'contato_sn_favorito', 'contato_sn_ativo', 'actions'
+    'contato_telefone','contato_sn_favorito', 'contato_sn_ativo', 'actions'
   ];
 
   dataSource = new MatTableDataSource<Contato>();
@@ -28,7 +31,7 @@ export class DataTableComponent {
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
   
-  constructor(private apiService : ApiService){}
+  constructor(private apiService : ApiService, private dialog: MatDialog){}
 
 
   ngOnInit(): void {
@@ -53,10 +56,23 @@ export class DataTableComponent {
   }
 
   atualizarContato(contato: Contato): void {
-    console.log('Atualizar contato', contato);
+    
+    const dialogRef = this.dialog.open(UpdateModelComponent, {
+
+      width: '500px',
+      data: contato,
+
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+
+        console.log('Contato atualizado:', result);
+      }
+    });
+
   }
 
-  // Função para o botão Deletar
   deletarContato(contato: Contato): void {
     console.log('Deletar contato', contato);
   }

@@ -1,7 +1,12 @@
 <div class="form-container">
-
     <form [formGroup]="contatoForm" (ngSubmit)="onSubmit()">
-    <h2>Cadastro Contato</h2>
+      <h2>Atualizar Contato</h2>
+  
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>ID</mat-label>
+        <input matInput formControlName="contato_id" type="text" disable>
+      </mat-form-field>
+      
       <mat-form-field appearance="fill" class="full-width">
         <mat-label>Nome</mat-label>
         <input matInput formControlName="contato_nome" type="text" required>
@@ -39,9 +44,9 @@
       </mat-form-field>
   
       <button mat-raised-button color="primary" type="submit" [disabled]="!contatoForm.valid">
-        <mat-icon>send</mat-icon> Enviar
+        <mat-icon>save</mat-icon> Atualizar
       </button>
-      
+      <button mat-button (click)="onCancel()">Cancelar</button>
     </form>
   </div>
   

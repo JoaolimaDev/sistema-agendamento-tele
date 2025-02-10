@@ -1,8 +1,8 @@
 <mat-toolbar color="primary">
-    <span>Sistema Agendamento Telefônico</span>
-    <div class="spacer"></div>
-      <a mat-button>Login</a>
-      <a mat-button>Cadastrar Contato</a>
-      <a mat-button>Agenda</a>
-      <a mat-button>Logout</a>
- </mat-toolbar>
+  <span>Sistema Agendamento Telefônico</span>
+  <div class="spacer"></div>
+    <button mat-button routerLink="/login">Login</button>
+    <button mat-button routerLink="/cadastrar-contato">Cadastrar Contato</button>
+    <button mat-button routerLink="/agenda">Agenda</button>
+    <button mat-button (click)="logout()">Logout</button> 
+</mat-toolbar>

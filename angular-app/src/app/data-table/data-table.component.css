@@ -1,0 +1,32 @@
+.container {
+    display: Absolute;
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 85%;
+}
+  
+.btn-update, .btn-delete {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 16px;
+    border-radius: 4px;
+    width: auto;
+}
+
+.btn-update {
+    background-color: #2196F3;
+    color: white;
+}
+
+.btn-delete {
+    background-color: #F44336;
+    color: white;
+    margin-left: 12px;
+}
+
+.btn-update mat-icon,
+.btn-delete mat-icon {
+    margin-right: 4px;
+}

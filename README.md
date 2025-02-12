@@ -20,6 +20,9 @@ Este projeto é uma aplicação completa para gerenciamento de contatos, focada 
   -  JAVA 17.0.14
   -  DOCKER 27.5.1
   -  ANGULAR 19.1.6
+  -  SPRING BOOT 3.4.2
+  -  POSTGRESQL
+  -  SWAGGER
 
 
 - **Banco de Dados:**  

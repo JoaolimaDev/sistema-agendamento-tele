@@ -4,9 +4,6 @@ Este projeto é uma aplicação completa para gerenciamento de contatos, focada 
 
 ## Funcionalidades
 
-- **Cadastro de Contatos:**  
-  Validação para impedir a duplicidade de contatos com base no número de celular.
-
 - **Consulta de Contatos:**  
   Permite a busca e visualização dos contatos cadastrados.
 
@@ -21,11 +18,9 @@ Este projeto é uma aplicação completa para gerenciamento de contatos, focada 
   - **Back-end:** Desenvolvido com Java e Spring Boot.  
   - **Front-end:** Desenvolvido com Angular , utilizando Guards para proteção de rotas.
 
-- **Organização do Projeto:**  
-  Estrutura organizada e coerente, com implementação de testes unitários tanto para o front-end quanto para o back-end.
 
 - **Banco de Dados:**  
-  Utiliza PostgreSQL, com o seguinte modelo de dados:
+
 
   ```sql
   create schema desafio;
@@ -40,23 +35,25 @@ Este projeto é uma aplicação completa para gerenciamento de contatos, focada 
       contato_dh_cad timestamp without time zone 
   )
 
-## Diagrama da API (Baseado na definição OpenAPI)
+# Diagrama da API 
 
-graph TD;
-    A[API Root] -->|GET| B[Obter Contatos /contato];
-    A -->|POST| C[Criar Contato /contato];
-    A -->|GET| D[Buscar por Email /contato/search/findByContatoEmail];
-    A -->|GET| E[Obter Contato por ID /contato/{id}];
-    A -->|PUT| F[Atualizar Contato /contato/{id}];
-    A -->|DELETE| G[Deletar Contato /contato/{id}];
-    A -->|PATCH| H[Editar Contato /contato/{id}];
-    A -->|GET| I[Perfil /profile];
-    A -->|GET| J[Perfil Contato /profile/contato];
-    A -->|POST| K[Login /api/auth/login];
-    A -->|POST| L[Logout /api/auth/logout];
+| Método HTTP | Endpoint                                  | Descrição                    |
+|-------------|-------------------------------------------|------------------------------|
+| GET         | /contato                                  | Obter todos os contatos      |
+| POST        | /contato                                  | Criar um novo contato        |
+| GET         | /contato/search/findByContatoEmail        | Buscar por e-mail            |
+| GET         | /contato/{id}                             | Obter contato por ID         |
+| PUT         | /contato/{id}                             | Atualizar contato por ID     |
+| DELETE      | /contato/{id}                             | Deletar contato por ID       |
+| PATCH       | /contato/{id}                             | Editar contato por ID        |
+| GET         | /profile                                  | Obter perfil do usuário      |
+| GET         | /profile/contato                          | Obter perfil do contato      |
+| POST        | /api/auth/login                           | Realizar login               |
+| POST        | /api/auth/logout                          | Realizar logout              |
 
 
-    ## Como utilizar
+
+## Como utilizar
 
 ```bash
     git clone https://github.com/JoaolimaDev/sistema-agendamento-tele.git

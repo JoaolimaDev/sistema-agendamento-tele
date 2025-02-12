@@ -60,6 +60,7 @@ Este projeto é uma aplicação completa para gerenciamento de contatos, focada 
 
 
 ## Como utilizar
+  - Certifique-se que o seu docker local detém permissões a nível sudo
 
 ```bash
     git clone https://github.com/JoaolimaDev/sistema-agendamento-tele.git

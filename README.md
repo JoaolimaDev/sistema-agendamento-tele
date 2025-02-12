@@ -4,8 +4,6 @@ Este projeto é uma aplicação completa para gerenciamento de contatos, focada 
 
 ## Funcionalidades
 
-- **Consulta de Contatos:**  
-  Permite a busca e visualização dos contatos cadastrados.
 
 - **Atualização e Inativação de Contatos:**  
   Possibilita editar as informações dos contatos e inativá-los quando necessário.

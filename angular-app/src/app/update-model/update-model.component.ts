@@ -9,6 +9,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
+import { ApiService } from '../services/api.service';
 
 @Component({
   selector: 'app-update-model',
@@ -32,21 +33,47 @@ export class UpdateModelComponent {
   constructor(
     private fb: FormBuilder,
     private dialogRef: MatDialogRef<Contato>,
-    @Inject(MAT_DIALOG_DATA) public data: any
+    @Inject(MAT_DIALOG_DATA) public data: any,
+    private apiService: ApiService 
   ) {
     this.contatoForm = this.fb.group({
-      contato_id: [{ value: data.contato_id, disabled: true }],
-      contato_nome: [data.contato_nome, Validators.required],
-      contato_email: [data.contato_email, [Validators.required, Validators.email]],
-      contato_celular: [data.contato_celular, Validators.required],
-      contato_telefone: [data.contato_telefone, Validators.required],
-      contato_sn_favorito: [data.contato_sn_favorito, Validators.required],
-      contato_sn_ativo: [data.contato_sn_ativo, Validators.required],
+      contato_id: [{ value: '', disabled: true }],
+      contato_nome: ['', Validators.required],
+      contato_email: ['', [Validators.required, Validators.email]],
+      contato_celular: ['', Validators.required],
+      contato_telefone: ['', Validators.required],
+      contato_sn_favorito: ['', Validators.required],
+      contato_sn_ativo: ['', Validators.required],
     });
   }
 
+
+
+  ngOnInit(): void {
+    this.apiService.getContatoById(this.data).subscribe(
+      (contato) => {
+        this.contatoForm.patchValue({
+
+          contato_nome: contato.contatoNome,
+          contato_email: contato.contatoEmail,
+          contato_celular: contato.contatoCelular,
+          contato_telefone: contato.contatoTelefone,
+          contato_sn_favorito: contato.contatoSnFavorito,
+          contato_sn_ativo: contato.contatoSnAtivo,
+        });
+      },
+      (error) => {
+        console.error('Erro ao obter os dados do contato:', error);
+      }
+    );
+  }
+
+
   onSubmit() {
     if (this.contatoForm.valid) {
+
+      this.apiService.updateContato(this.data, this.contatoForm.getRawValue());
+
       this.dialogRef.close(this.contatoForm.getRawValue());
     }
     

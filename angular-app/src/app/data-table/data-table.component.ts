@@ -10,6 +10,7 @@ import { ApiService } from '../services/api.service';
 import { MatIconModule } from '@angular/material/icon';
 import { MatDialog } from '@angular/material/dialog';
 import { UpdateModelComponent } from '../update-model/update-model.component';
+import { ContatoDisplay } from '../models/ContatoDisplay.model';
 
 
 @Component({
@@ -21,12 +22,12 @@ import { UpdateModelComponent } from '../update-model/update-model.component';
 })
 export class DataTableComponent {
 
-  displayedColumns: string[] = ['contato_id', 
+  displayedColumns: string[] = [
     'contato_nome', 'contato_email', 'contato_celular', 
     'contato_telefone','contato_sn_favorito', 'contato_sn_ativo', 'actions'
   ];
 
-  dataSource = new MatTableDataSource<Contato>();
+  dataSource = new MatTableDataSource<ContatoDisplay>();
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
@@ -55,7 +56,7 @@ export class DataTableComponent {
     }
   }
 
-  atualizarContato(contato: Contato): void {
+  atualizarContato(contato: String): void {
     
     const dialogRef = this.dialog.open(UpdateModelComponent, {
 
@@ -73,8 +74,10 @@ export class DataTableComponent {
 
   }
 
-  deletarContato(contato: Contato): void {
-    console.log('Deletar contato', contato);
+  deletarContato(contato: string): void {
+
+    this.apiService.delete(contato);
+    
   }
 
 }

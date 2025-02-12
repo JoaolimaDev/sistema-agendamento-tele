@@ -7,6 +7,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatDatepickerModule } from '@angular/material/datepicker';
+import { ApiService } from '../services/api.service';
 
 @Component({
   selector: 'app-cadastro',
@@ -29,7 +30,7 @@ export class CadastroComponent {
   contatoForm: FormGroup;
 
   
-  constructor() {
+  constructor(private apiService: ApiService) {
     this.contatoForm = new FormGroup({
       contato_nome: new FormControl(''),
       contato_email: new FormControl(''),
@@ -42,6 +43,8 @@ export class CadastroComponent {
 
 
   onSubmit() {
-    console.log(this.contatoForm.value);
+
+    this.apiService.cadastro(this.contatoForm.value);
+    
   }
 }

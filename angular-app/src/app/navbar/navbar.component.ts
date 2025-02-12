@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { RouterModule } from '@angular/router';
+import { ApiService } from '../services/api.service';
 
 @Component({
   selector: 'app-navbar',
@@ -13,7 +14,11 @@ import { RouterModule } from '@angular/router';
 })
 export class NavbarComponent {
 
+  
+  constructor(private apiService: ApiService) {}
+
   logout() {
-    console.log('logout...');
+
+    this.apiService.logout();
   }
 }

@@ -21,8 +21,6 @@ import { ApiService } from '../services/api.service';
 export class LoginComponent {
   loginForm: FormGroup;
 
-  
-
   constructor(private apiService: ApiService) {
     this.loginForm = new FormGroup({
       email: new FormControl(''),

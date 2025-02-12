@@ -7,57 +7,51 @@
   <div class="mat-elevation-z8">
     <table mat-table [dataSource]="dataSource" matSort>
 
-       <!-- Id Column --> 
-       <ng-container matColumnDef="contato_id">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header> ID </th>
-        <td mat-cell *matCellDef="let row"> {{ row.contato_id }} </td>
-      </ng-container>
-
       <!-- Nome Column -->
       <ng-container matColumnDef="contato_nome">
         <th mat-header-cell *matHeaderCellDef mat-sort-header> Nome </th>
-        <td mat-cell *matCellDef="let row"> {{ row.contato_nome }} </td>
+        <td mat-cell *matCellDef="let row"> {{ row.contatoNome }} </td>
       </ng-container>
 
       <!-- Email Column -->
       <ng-container matColumnDef="contato_email">
         <th mat-header-cell *matHeaderCellDef mat-sort-header> Email </th>
-        <td mat-cell *matCellDef="let row"> {{ row.contato_email }} </td>
+        <td mat-cell *matCellDef="let row"> {{ row.contatoEmail }} </td>
       </ng-container>
 
       <!-- Celular Column -->
       <ng-container matColumnDef="contato_celular">
         <th mat-header-cell *matHeaderCellDef mat-sort-header> Celular </th>
-        <td mat-cell *matCellDef="let row"> {{ row.contato_celular }} </td>
+        <td mat-cell *matCellDef="let row"> {{ row.contatoCelular }} </td>
       </ng-container>
       
        <!-- Telefone Column -->
        <ng-container matColumnDef="contato_telefone">
         <th mat-header-cell *matHeaderCellDef mat-sort-header> Telefone </th>
-        <td mat-cell *matCellDef="let row"> {{ row.contato_telefone }} </td>
+        <td mat-cell *matCellDef="let row"> {{ row.contatoTelefone }} </td>
       </ng-container>
 
       <!-- Favorito Column -->
       <ng-container matColumnDef="contato_sn_favorito">
         <th mat-header-cell *matHeaderCellDef mat-sort-header> Favorito </th>
-        <td mat-cell *matCellDef="let row"> {{ row.contato_sn_favorito === 'S' ? 'Sim' : 'Não' }} </td>
+        <td mat-cell *matCellDef="let row"> {{ row.contatoSnFavorito === 'S' ? 'Sim' : 'Não' }} </td>
       </ng-container>
 
       <!-- Ativo Column -->
       <ng-container matColumnDef="contato_sn_ativo">
         <th mat-header-cell *matHeaderCellDef mat-sort-header> Ativo </th>
-        <td mat-cell *matCellDef="let row"> {{ row.contato_sn_ativo === 'S' ? 'Sim' : 'Não' }} </td>
+        <td mat-cell *matCellDef="let row"> {{ row.contatoSnAtivo === 'S' ? 'Sim' : 'Não' }} </td>
       </ng-container>
 
       <!-- Ações Column -->
       <ng-container matColumnDef="actions">
         <th mat-header-cell *matHeaderCellDef> Ações </th>
         <td mat-cell *matCellDef="let row">
-          <button mat-button class="btn-update" (click)="atualizarContato(row)">
+          <button mat-button class="btn-update" (click)="atualizarContato(row.selfLink)">
             <mat-icon>edit</mat-icon>
             Atualizar
           </button>
-          <button mat-button class="btn-delete" (click)="deletarContato(row)">
+          <button mat-button class="btn-delete" (click)="deletarContato(row.selfLink)">
             <mat-icon>delete</mat-icon>
             Deletar
           </button>

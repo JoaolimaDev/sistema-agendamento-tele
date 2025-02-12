@@ -15,6 +15,11 @@ Este projeto é uma aplicação completa para gerenciamento de contatos, focada 
   A comunicação entre o front-end e o back-end é realizada por meio de uma API REST.  
   - **Back-end:** Desenvolvido com Java e Spring Boot.  
   - **Front-end:** Desenvolvido com Angular , utilizando Guards para proteção de rotas.
+ 
+- **Tecnologias utilizadas:**
+  -  JAVA 17.0.14
+  -  DOCKER 27.5.1
+  -  ANGULAR 19.1.6
 
 
 - **Banco de Dados:**  
@@ -52,6 +57,7 @@ Este projeto é uma aplicação completa para gerenciamento de contatos, focada 
 
 
 ## Como utilizar
+  - Certifique-se que o seu docker local detém permissões a nível sudo
 
 ```bash
     git clone https://github.com/JoaolimaDev/sistema-agendamento-tele.git

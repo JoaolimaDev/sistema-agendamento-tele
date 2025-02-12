@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.noxtec.spring_app.SpringAppApplicationTests
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.499 s -- in com.noxtec.spring_app.SpringAppApplicationTests

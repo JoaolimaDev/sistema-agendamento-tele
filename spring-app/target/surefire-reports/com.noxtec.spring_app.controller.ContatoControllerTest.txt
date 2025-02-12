@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.noxtec.spring_app.controller.ContatoControllerTest
+-------------------------------------------------------------------------------
+Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 7.258 s -- in com.noxtec.spring_app.controller.ContatoControllerTest

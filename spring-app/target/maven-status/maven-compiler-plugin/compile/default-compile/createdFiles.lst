@@ -1,0 +1,16 @@
+com/noxtec/spring_app/domain/model/Contato.class
+com/noxtec/spring_app/controller/loginController.class
+com/noxtec/spring_app/domain/repository/UserRepository.class
+com/noxtec/spring_app/config/utilities/JwtUtilities.class
+com/noxtec/spring_app/config/postgresql/DatabaseConfig.class
+com/noxtec/spring_app/config/security/securityConfig.class
+com/noxtec/spring_app/domain/dto/Response.class
+com/noxtec/spring_app/config/security/AuthenticationEntryPointHandler.class
+com/noxtec/spring_app/domain/dto/LoginRequest.class
+com/noxtec/spring_app/domain/repository/ContatoRepository.class
+com/noxtec/spring_app/config/utilities/JwtRequestFilter.class
+com/noxtec/spring_app/service/impl/UserServiceImpl.class
+com/noxtec/spring_app/config/ExceptionHandler/GlobalExceptionHandler.class
+com/noxtec/spring_app/service/userService.class
+com/noxtec/spring_app/SpringAppApplication.class
+com/noxtec/spring_app/domain/model/User.class

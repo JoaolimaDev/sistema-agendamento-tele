@@ -4,6 +4,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { Login } from '../models/auth';
+import { ApiService } from '../services/api.service';
 
 @Component({
   selector: 'app-login',
@@ -20,7 +21,9 @@ import { Login } from '../models/auth';
 export class LoginComponent {
   loginForm: FormGroup;
 
-  constructor() {
+  
+
+  constructor(private apiService: ApiService) {
     this.loginForm = new FormGroup({
       email: new FormControl(''),
       senha: new FormControl('')
@@ -29,6 +32,6 @@ export class LoginComponent {
 
   onSubmit() {
     const loginData: Login = this.loginForm.value;
-    console.log(loginData);
+    this.apiService.login(loginData);
   }
 }

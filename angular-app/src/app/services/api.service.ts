@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { Contato } from '../models/Contato.model';
+import { Login } from '../models/auth';
+import { Router } from '@angular/router';
 
 const ELEMENT_DATA: Contato[] = [
   {
@@ -53,9 +55,9 @@ const ELEMENT_DATA: Contato[] = [
 export class ApiService {
 
 
-  private apiUrl = '';
-
-  // constructor(private http: HttpClient) {}
+  private apiUrl = 'http://localhost:8080/api/auth/login';
+ 
+  constructor(private http: HttpClient, private router: Router) {}
 
 
   getData(): Observable<Contato[]> {
@@ -63,6 +65,26 @@ export class ApiService {
     return of(ELEMENT_DATA);
   }
 
+  login(loginData: Login): void {
+
+    const requestBody = {
+      username: loginData.email,
+      password: loginData.senha
+    };
+
+    this.http.post<{ mensagem: string; status: string }>(this.apiUrl, requestBody).subscribe({
+      next: (response) => {
+        if (response.status === 'OK') {
+          this.router.navigate(['/cadastrar-contato']);
+        }
+      },
+      error: (error) => {
+        if (error.status === 400) {
+          alert(error.error.mensagem);
+        }
+      }
+    });
+  }
 
   // getData(): Observable<Element[]> {
   //   return this.http.get<Element[]>(this.apiUrl);

@@ -56,7 +56,6 @@ Este projeto é uma aplicação completa para gerenciamento de contatos, focada 
 ```bash
     git clone https://github.com/JoaolimaDev/sistema-agendamento-tele.git
     sudo docker-compose up --build
-    sudo docker-compose exec postgres psql -U postgres -d bolsa -f /docker-entrypoint-initdb.d/bolsa.bkp
 ```
 
 

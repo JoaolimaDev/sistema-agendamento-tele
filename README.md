@@ -64,7 +64,7 @@ Este projeto é uma aplicação completa para gerenciamento de contatos, focada 
 
 ```bash
     git clone https://github.com/JoaolimaDev/sistema-agendamento-tele.git
-    docker-compose up --build
+    docker compose up --build
 ```
 
 

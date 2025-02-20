@@ -73,6 +73,11 @@ Este projeto é uma aplicação completa para gerenciamento de contatos, focada 
 
 1. **Front-end**
    - **URL:**  http://localhost:4200/
+  
+
+   **Usuário disponível para autênticação**
+   - ** email: admin**
+   - ** senha  admin123**
 
 
 <p align="left">
